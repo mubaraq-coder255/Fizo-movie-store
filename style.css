@@ -28,3 +28,17 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
 .add-btn { background: #28a745; color: #fff; }
 .share-btn { background: #007bff; color: #fff; }
 .desc-title { background: #ff0000; padding: 10px; margin-top: 20px; font-size: 18px; border-radius: 5px; }
+.site-footer { 
+    background: #000; 
+    color: #fff; 
+    padding: 20px; 
+    text-align: center; 
+    border-top: 3px solid #ffcc00; 
+    margin-top: 30px; 
+}
+.footer-links a { color: #fff; text-decoration: none; margin: 0 5px; }
+.social-icons { margin-top: 10px; }
+.social-icons button { 
+    background: #fff; color: #000; border-radius: 50%; 
+    width: 30px; height: 30px; border: none; margin: 5px; cursor: pointer; 
+}
