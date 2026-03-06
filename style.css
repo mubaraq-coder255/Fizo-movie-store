@@ -1,33 +1,13 @@
-/* Staili za Jumla */
 body { background-color: #121212; color: #fff; font-family: sans-serif; margin: 0; }
 header { background: #000; padding: 20px; text-align: center; border-bottom: 3px solid gold; }
 
-/* Grid ya Muvi */
+/* Staili za Grid ya Muvi */
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px; }
 .movie-card img { width: 100%; border: 2px solid gold; border-radius: 8px; transition: 0.3s; }
 .movie-card img:hover { transform: scale(1.05); }
 
-/* Player page */
-.player-container { padding: 20px; text-align: center; }
+/* Staili za Maoni */
+.comments-section { margin-top: 30px; padding: 20px; background: #1a1a1a; border-top: 2px solid gold; text-align: left; }
+.comment-box textarea { width: 100%; height: 80px; background: #333; color: #fff; border: 1px solid gold; padding: 10px; margin-bottom: 10px; }
+.comment-list { margin-top: 20px; }
 .back-btn { display: inline-block; color: gold; margin-bottom: 10px; text-decoration: none; }
-.comments-section {
-    margin-top: 30px;
-    padding: 20px;
-    background: #1a1a1a;
-    border-top: 2px solid gold;
-}
-
-.comment-box textarea {
-    width: 100%;
-    height: 80px;
-    background: #333;
-    color: #fff;
-    border: 1px solid gold;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-.comment-list {
-    margin-top: 20px;
-    text-align: left;
-}
