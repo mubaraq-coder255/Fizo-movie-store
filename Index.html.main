@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizo Movies Store - Burudani ya Dhahabu</title>
+    <style>
+        /* Muonekano wa Netflix ya Dhahabu */
+        body {
+            background-color: #000;
+            color: #d4af37;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d4af37;
+        }
+
+        .logo {
+            width: 100px;
+            border-radius: 50%;
+            border: 2px solid #d4af37;
+        }
+
+        /* Sehemu ya Muvi */
+        .movie-section {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .movie-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .movie-card:hover {
+            border-color: #d4af37;
+            transform: scale(1.05);
+        }
+
+        .movie-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .movie-info {
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        /* Sehemu ya Malipo */
+        .payment-box {
+            background: #d4af37;
+            color: #000;
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Sehemu ya Player */
+        .player-container {
+            background: #1a1a1a;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid #d4af37;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+            background: #000;
+            color: #fff;
+        }
+
+        .btn {
+            background: #d4af37;
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="fizo-logo.png" alt="Fizo Logo" class="logo">
+        <h1>FIZO MOVIES STORE</h1>
+        <p>Muvi Mpya Kila Siku - Tsh 500 Pekee!</p>
+    </header>
+
+    <div class="movie-section">
+        <div class="movie-card">
+            <img src="https://via.placeholder.com/150x200?text=DJ+Zimba+1" alt="Movie">
+            <div class="movie-info">DJ ZIMBA ACTION</div>
+        </div>
+        <div class="movie-card">
+            <img src="https://via.placeholder.com/150x200?text=DJ+Zimba+2" alt="Movie">
+            <div class="movie-info">DJ ZIMBA SERIES</div>
+        </div>
+        <div class="movie-card">
+            <img src="https://via.placeholder.com/150x200?text=Bongo+Movie" alt="Movie">
+            <div class="movie-info">BONGO MOVIE MPYA</div>
+        </div>
+    </div>
+
+    <div class="payment-box">
+        <h3>JINSI YA KUPATA LINK</h3>
+        <p>Lipia Tsh 500 kwenda:<br>07XX XXX XXX (M-PESA)<br>Kisha tuma meseji WhatsApp upate link.</p>
+    </div>
+
+    <div class="player-container">
+        <h2>UMESHAPATA LINK? WEKA HAPA</h2>
+        <input type="text" id="movie-url" placeholder="Paste Link ya TeraBox uliyotumiwa...">
+        <br>
+        <button class="btn" onclick="openMovie()">CHEZA MUVI SASA</button>
+    </div>
+
+    <footer>
+        &copy; 2026 Fizo Movies Store. Haki zote zimehifadhiwa.
+    </footer>
+
+    <script>
+        function openMovie() {
+            var url = document.getElementById('movie-url').value;
+            if(url) {
+                window.open(url, "_blank");
+            } else {
+                alert("Tafadhali weka link uliyotumiwa!");
+            }
+        }
+    </script>
+
+</body>
+</html>
+
