@@ -7,51 +7,48 @@
 </head>
 <body>
     <div class="player-container">
-        <a href="index.html" class="back-btn">← Rudi Nyuma kwenye Home</a>
+        <a href="index.html" class="back-btn">← Rudi Nyuma</a>
         
         <video width="100%" controls poster="wakubwa.jpg">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            Kivinjari chako hakiauni video hii.
+            <source src="video.mp4" type="video/mp4">
         </video>
         
-        <h2>Jina la Muvi Inayocheza</h2>
+        <h2>UNTAMED RIDER</h2>
+        
+        <div class="stats">
+            <span id="view-count">Views: 1,240</span> | 
+            <span id="like-count">Likes: 450</span>
+            <button onclick="addLike()">👍 Like</button>
+        </div>
+
+        <div class="download-section">
+            <a href="https://wa.me/255749705400?text=Habari, Nahitaji kuDownload muvi hii: UNTAMED RIDER" 
+               target="_blank" class="download-btn">
+               DOWNLOAD MOVIE HAPA
+            </a>
+        </div>
 
         <section class="comments-section">
-            <h3>Maoni (Comments)</h3>
-            <div class="comment-box">
-                <textarea id="comment-input" placeholder="Andika maoni yako hapa..."></textarea>
-                <button onclick="addComment()">Tuma Maoni</button>
-            </div>
-            <div id="comment-list" class="comment-list">
-                <p><strong>Juma:</strong> Muvi hii ni nzuri sana!</p>
-            </div>
+            <h3>Maoni</h3>
+            <textarea id="comm" placeholder="Andika maoni..."></textarea>
+            <button onclick="addComm()">Tuma</button>
+            <div id="list"></div>
         </section>
     </div>
 
     <script>
-        function addComment() {
-            let input = document.getElementById('comment-input');
-            let commentText = input.value;
-            if (commentText !== "") {
-                let list = document.getElementById('comment-list');
-                let newComment = document.createElement('p');
-                newComment.innerHTML = "<strong>Mtumiaji:</strong> " + commentText;
-                list.appendChild(newComment);
-                input.value = ""; 
+        let l = 450;
+        function addLike() { 
+            l++; 
+            document.getElementById('like-count').innerText = "Likes: " + l; 
+        }
+        function addComm() { 
+            let t = document.getElementById('comm').value;
+            if(t) { 
+                document.getElementById('list').innerHTML += "<p><strong>Mtumiaji:</strong> " + t + "</p>"; 
+                document.getElementById('comm').value = ""; 
             }
         }
     </script>
 </body>
 </html>
-<script>
-    function addComment() {
-        let commentText = document.querySelector('textarea').value;
-        if (commentText !== "") {
-            let list = document.getElementById('comment-list');
-            let newComment = document.createElement('p');
-            newComment.innerHTML = "<strong>Mtumiaji:</strong> " + commentText;
-            list.appendChild(newComment);
-            document.querySelector('textarea').value = ""; // Kufuta maandishi baada ya kutuma
-        }
-    }
-</script>
