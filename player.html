@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fizo Player</title>
+    <title>Sisu 2 | Fizo Movies</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="player-container">
-        <a href="index.html" class="back-btn">← Rudi Nyuma</a>
-        
-        <video width="100%" controls poster="wakubwa.jpg">
+        <video controls poster="wakubwa.jpg" class="main-video">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
         </video>
-        
-        <h2>UNTAMED RIDER</h2>
 
-        <div class="stats-box">
-            <div class="stat-item">👁 Views: 1,240</div>
-            <div class="stat-item">
-                <span id="like-count">👍 450</span>
-                <button onclick="addLike()" class="like-btn">LIKE</button>
+        <div class="movie-info">
+            <h1>Sisu 2</h1>
+            <div class="stats-line">
+                <span>👁 330 Views</span>
+            </div>
+            <div class="category-tag">Action | Imetafsiriwa</div>
+            
+            <a href="https://wa.me/255749705400?text=Habari, Nahitaji kuDownload muvi: Sisu 2" class="buy-btn">
+                BUY FULL MOVIE
+            </a>
+            
+            <div class="action-buttons">
+                <button class="add-btn">+ Add to Watchlist</button>
+                <button class="share-btn">Share</button>
             </div>
         </div>
 
-        <a href="https://wa.me/255749705400?text=Habari, Nahitaji kuDownload muvi hii: UNTAMED RIDER" class="download-btn">
-            DOWNLOAD MOVIE HAPA
-        </a>
+        <div class="desc-box">
+            <h2 class="desc-title">Description</h2>
+            <p>Hapa weka maelezo mafupi ya muvi yako...</p>
+        </div>
     </div>
-
-    <script>
-        let likes = 450;
-        function addLike() {
-            likes++;
-            document.getElementById('like-count').innerText = "👍 " + likes;
-        }
-    </script>
 </body>
 </html>
