@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fizo Movies Store</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <header>
         <h1>FIZO MOVIES STORE</h1>
         <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="searchMovie()" placeholder="Tafuta muvi...">
+            <input type="text" id="searchInput" onkeyup="searchMovie()" placeholder="Tafuta muvi hapa...">
         </div>
         <nav class="categories">
             <button onclick="filterMovies('all')">ZOTE</button>
@@ -19,14 +20,6 @@
             <button onclick="filterMovies('crime')">CRIME</button>
         </nav>
     </header>
-
-    <div class="slider">
-        <div class="slides">
-            <img src="wakubwa.jpg" alt="Muvi 1">
-            <img src="series.jpg" alt="Muvi 2">
-            <img src="mpya.jpg" alt="Muvi 3">
-        </div>
-    </div>
 
     <main>
         <div class="movie-grid" id="movieGrid">
@@ -37,10 +30,6 @@
             <a href="player.html" class="movie-card" data-category="comedy" data-title="series bomba">
                 <img src="series.jpg" alt="Muvi">
                 <p>SERIES BOMBA</p>
-            </a>
-            <a href="player.html" class="movie-card" data-category="crime" data-title="punitive train">
-                <img src="mpya.jpg" alt="Muvi">
-                <p>PUNITIVE TRAIN</p>
             </a>
         </div>
     </main>
