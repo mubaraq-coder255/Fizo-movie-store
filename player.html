@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="sw">
-<head><link rel="stylesheet" href="style.css"></head>
+<head>
+    <meta charset="UTF-8">
+    <title>Fizo Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div class="player-container">
         <a href="index.html" class="back-btn">← Rudi Nyuma</a>
-        <video width="100%" controls><source src="video.mp4" type="video/mp4"></video>
+        
+        <video width="100%" controls poster="wakubwa.jpg">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        
         <h2>UNTAMED RIDER</h2>
+        
         <div class="stats">
-            <span id="view-count">Views: 1,240</span> | <span id="like-count">Likes: 450</span>
+            <span id="view-count">Views: 1,240</span> | 
+            <span id="like-count">Likes: 450</span>
             <button onclick="addLike()">👍 Like</button>
         </div>
-        <textarea id="comm" placeholder="Andika maoni..."></textarea>
-        <button onclick="addComm()">Tuma</button>
-        <div id="list"></div>
+
+        <div class="download-section">
+            <a href="https://wa.me/255749705400?text=Habari, Nahitaji kuDownload muvi hii: UNTAMED RIDER" 
+               target="_blank" class="download-btn">
+               DOWNLOAD MOVIE HAPA
+            </a>
+        </div>
+
+        <section class="comments-section">
+            <h3>Maoni</h3>
+            <textarea id="comm" placeholder="Andika maoni..."></textarea>
+            <button onclick="addComm()">Tuma</button>
+            <div id="list"></div>
+        </section>
     </div>
+
     <script>
         let l = 450;
-        function addLike() { l++; document.getElementById('like-count').innerText = "Likes: " + l; }
+        function addLike() { 
+            l++; 
+            document.getElementById('like-count').innerText = "Likes: " + l; 
+        }
         function addComm() { 
             let t = document.getElementById('comm').value;
-            if(t) { document.getElementById('list').innerHTML += "<p><strong>Mtumiaji:</strong> " + t + "</p>"; document.getElementById('comm').value = ""; }
+            if(t) { 
+                document.getElementById('list').innerHTML += "<p><strong>Mtumiaji:</strong> " + t + "</p>"; 
+                document.getElementById('comm').value = ""; 
+            }
         }
     </script>
 </body>
