@@ -1,20 +1,29 @@
+/* Rangi za Zimba (Dark Mode na Gold) */
 body { background-color: #0d0d0d; color: #fff; font-family: sans-serif; margin: 0; }
-.player-container { max-width: 600px; margin: auto; }
-.main-video { width: 100%; display: block; border-bottom: 3px solid #ffcc00; }
 
-.movie-info { padding: 20px; }
-.movie-info h1 { margin: 0; font-size: 24px; }
-.stats-line { color: #aaa; margin: 10px 0; }
-.category-tag { color: #fff; margin-bottom: 15px; }
+/* Kurekebisha Player */
+.player-container { max-width: 600px; margin: auto; padding: 10px; }
+video { width: 100%; border-bottom: 3px solid #ffcc00; display: block; }
 
+/* Muonekano wa Movie Info (Jina na Stats) */
+.movie-info { padding: 20px; text-align: center; }
+h1 { color: #fff; margin: 10px 0; }
+.stats-line { color: #ffcc00; font-weight: bold; margin-bottom: 10px; }
+
+/* Vifungo vya Rangi (Buy, Add, Share) */
 .buy-btn { 
     display: block; background: #ffaa00; color: #000; text-align: center; 
-    padding: 12px; font-weight: bold; text-decoration: none; border-radius: 5px; 
+    padding: 12px; font-weight: bold; text-decoration: none; border-radius: 5px; margin: 10px 0;
 }
+.action-buttons { display: flex; gap: 10px; justify-content: center; }
+button { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+.add-btn { background: #28a745; color: #fff; }
+.share-btn { background: #007bff; color: #fff; }
 
-.action-buttons { display: flex; gap: 10px; margin-top: 15px; }
-.add-btn { background: #28a745; color: #fff; border: none; padding: 10px; flex: 1; border-radius: 5px; }
-.share-btn { background: #007bff; color: #fff; border: none; padding: 10px; flex: 1; border-radius: 5px; }
+/* Description Bar */
+.desc-title { background: #ff0000; padding: 10px; margin-top: 20px; font-size: 18px; border-radius: 5px; }
 
-.desc-box { padding: 20px; }
-.desc-title { background: #ff0000; padding: 10px; font-size: 18px; margin: 0; }
+/* Grid ya Index (Ukurasa wa mwanzo) */
+.movie-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 15px; }
+.movie-card { text-decoration: none; color: #fff; background: #1a1a1a; padding: 10px; border-radius: 8px; }
+.movie-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 5px; }
