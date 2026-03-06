@@ -21,3 +21,24 @@ video { width: 100%; border: 2px solid gold; border-radius: 8px; background: #00
 .comments-section h3 { color: gold; }
 textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid gold; background: #000; color: #fff; box-sizing: border-box; }
 .comments-section button { background: gold; color: #000; border: none; padding: 10px 20px; margin-top: 10px; cursor: pointer; font-weight: bold; border-radius: 5px; }
+.stats-box { 
+    display: flex; 
+    justify-content: space-between; 
+    background: #1a1a1a; 
+    padding: 15px; 
+    margin: 20px 0; 
+    border-radius: 8px; 
+    border: 1px solid gold; 
+    color: gold;
+    font-weight: bold;
+}
+.like-btn { 
+    background: gold; 
+    color: #000; 
+    border: none; 
+    padding: 5px 10px; 
+    margin-left: 10px; 
+    cursor: pointer; 
+    border-radius: 4px;
+    font-weight: bold;
+}
