@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Fizo Player</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="player-container">
-        <a href="index.html" class="back-btn">← Rudi Nyuma</a>
-        <video width="100%" controls poster="wakubwa.jpg">
-            <source src="video.mp4" type="video/mp4">
+        <a href="index.html" class="back-btn">← RUDI NYUMA</a>
+        
+        <video controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Browser yako haisupport video.
         </video>
-        <h2>Jina la Muvi</h2>
-        <section class="comments-section">
-            <h3>Maoni</h3>
-            <textarea id="comm" placeholder="Andika maoni..."></textarea>
-            <button onclick="addComm()">Tuma</button>
-            <div id="list"></div>
-        </section>
+
+        <h2>UNTAMED RIDER</h2>
+        
+        <div class="stats">
+            Views: 1,240 | Likes: 450 <button onclick="alert('Liked!')">👍 Like</button>
+        </div>
+
+        <a href="https://wa.me/255749705400?text=Habari, Nahitaji kuDownload muvi: UNTAMED RIDER" class="download-btn">
+            DOWNLOAD MOVIE HAPA
+        </a>
+
+        <h3>Maoni</h3>
+        <textarea id="comm"></textarea><br>
+        <button onclick="addComm()">Tuma Maoni</button>
+        <div id="list" style="text-align: left; margin-top: 10px;"></div>
     </div>
+
     <script>
         function addComm() {
-            let txt = document.getElementById('comm').value;
-            if(txt) {
-                document.getElementById('list').innerHTML += "<p><strong>Mtumiaji:</strong> " + txt + "</p>";
-                document.getElementById('comm').value = "";
-            }
+            let t = document.getElementById('comm').value;
+            if(t) { document.getElementById('list').innerHTML += "<p>Mtumiaji: " + t + "</p>"; document.getElementById('comm').value = ""; }
         }
     </script>
 </body>
