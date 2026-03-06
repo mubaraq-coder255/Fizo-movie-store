@@ -13,3 +13,11 @@ header { background: #000; padding: 20px; text-align: center; border-bottom: 3px
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; padding: 20px; }
 .movie-card img { width: 100%; border: 2px solid gold; border-radius: 8px; }
 .movie-card p { color: gold; text-align: center; font-weight: bold; }
+/* Player layout */
+.player-container { padding: 20px; text-align: center; }
+.back-btn { color: gold; text-decoration: none; display: block; margin-bottom: 10px; font-weight: bold; }
+video { width: 100%; border: 2px solid gold; border-radius: 8px; background: #000; }
+.comments-section { margin-top: 20px; background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid gold; text-align: left; }
+.comments-section h3 { color: gold; }
+textarea { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid gold; background: #000; color: #fff; box-sizing: border-box; }
+.comments-section button { background: gold; color: #000; border: none; padding: 10px 20px; margin-top: 10px; cursor: pointer; font-weight: bold; border-radius: 5px; }
