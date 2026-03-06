@@ -9,24 +9,39 @@
 <body>
     <header>
         <h1>FIZO MOVIES STORE</h1>
-        <div class="search-box">
-            <input type="text" placeholder="Tafuta muvi...">
-        </div>
         <nav class="categories">
-            <button>Action</button>
-            <button>Comedy</button>
-            <button>Crime</button>
-            <button>Adventure</button>
+            <button onclick="filterMovies('all')">ZOTE</button>
+            <button onclick="filterMovies('action')">ACTION</button>
+            <button onclick="filterMovies('comedy')">COMEDY</button>
+            <button onclick="filterMovies('crime')">CRIME</button>
         </nav>
     </header>
 
     <main>
-        <h3>Trending Movies</h3>
         <div class="movie-grid">
-            <a href="player.html" class="movie-card"><img src="wakubwa.jpg" alt="Wakubwa Muvi"></a>
-            <a href="player.html" class="movie-card"><img src="series.jpg" alt="Series Bomba"></a>
-            <a href="player.html" class="movie-card"><img src="mpya.jpg" alt="Muvi Mpya"></a>
+            <a href="player.html" class="movie-card" data-category="action">
+                <img src="wakubwa.jpg" alt="Action Muvi">
+            </a>
+            <a href="player.html" class="movie-card" data-category="comedy">
+                <img src="series.jpg" alt="Comedy Muvi">
+            </a>
+            <a href="player.html" class="movie-card" data-category="crime">
+                <img src="mpya.jpg" alt="Crime Muvi">
+            </a>
         </div>
     </main>
+
+    <script>
+        function filterMovies(category) {
+            let cards = document.querySelectorAll('.movie-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
