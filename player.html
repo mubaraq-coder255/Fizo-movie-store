@@ -12,26 +12,28 @@
         
         <video width="100%" controls poster="wakubwa.jpg">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-            Browser yako haisupport video hii.
         </video>
-
-        <h2>UNTAMED RIDER</h2>
         
-        <section class="comments-section">
-            <h3>Maoni</h3>
-            <textarea id="comm" placeholder="Andika maoni..."></textarea>
-            <button onclick="addComm()">Tuma</button>
-            <div id="list"></div>
-        </section>
+        <h2>UNTAMED RIDER</h2>
+
+        <div class="stats-box">
+            <div class="stat-item">👁 Views: 1,240</div>
+            <div class="stat-item">
+                <span id="like-count">👍 450</span>
+                <button onclick="addLike()" class="like-btn">LIKE</button>
+            </div>
+        </div>
+
+        <a href="https://wa.me/255749705400?text=Habari, Nahitaji kuDownload muvi hii: UNTAMED RIDER" class="download-btn">
+            DOWNLOAD MOVIE HAPA
+        </a>
     </div>
 
     <script>
-        function addComm() {
-            let txt = document.getElementById('comm').value;
-            if(txt) {
-                document.getElementById('list').innerHTML += "<p><strong>Mtumiaji:</strong> " + txt + "</p>";
-                document.getElementById('comm').value = "";
-            }
+        let likes = 450;
+        function addLike() {
+            likes++;
+            document.getElementById('like-count').innerText = "👍 " + likes;
         }
     </script>
 </body>
