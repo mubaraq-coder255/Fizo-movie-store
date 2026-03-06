@@ -1,15 +1,10 @@
 body { background-color: #121212; color: #fff; font-family: sans-serif; margin: 0; }
 header { background: #000; padding: 20px; text-align: center; border-bottom: 3px solid gold; }
-.search-box input { padding: 10px; width: 80%; border-radius: 20px; border: none; margin-bottom: 15px; }
-.categories button { background: transparent; color: gold; border: 1px solid gold; padding: 8px 15px; margin: 5px; cursor: pointer; border-radius: 5px; }
-
-/* Slider */
-.slider { width: 100%; height: 300px; overflow: hidden; position: relative; border-bottom: 3px solid gold; }
+.slider { width: 100%; height: 250px; overflow: hidden; border-bottom: 3px solid gold; }
 .slides { display: flex; width: 300%; animation: slide 15s infinite; }
-.slides img { width: 33.33%; height: 300px; object-fit: cover; }
-@keyframes slide { 0% { margin-left: 0; } 33% { margin-left: -100%; } 66% { margin-left: -200%; } 100% { margin-left: 0; } }
-
-/* Grid */
+.slides img { width: 33.33%; height: 250px; object-fit: cover; }
+@keyframes slide { 0%, 33%, 66%, 100% { margin-left: 0; } } /* Rahisisha kwa sasa */
 .movie-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; padding: 20px; }
+.movie-card { text-decoration: none; color: gold; text-align: center; }
 .movie-card img { width: 100%; border: 2px solid gold; border-radius: 8px; }
-.movie-card p { color: gold; text-align: center; font-weight: bold; }
+.stats { color: gold; margin: 10px 0; }
