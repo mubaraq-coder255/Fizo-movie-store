@@ -1,0 +1,37 @@
+body {
+    background-color: #000;
+    color: gold;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    border-bottom: 2px solid gold;
+    padding-bottom: 10px;
+}
+
+.movie-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.movie-card {
+    border: 3px solid gold;
+    padding: 10px;
+    background-color: #1a1a1a;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border: 1px solid gold;
+}
+
+.movie-card p {
+    font-weight: bold;
+    margin-top: 10px;
+}
