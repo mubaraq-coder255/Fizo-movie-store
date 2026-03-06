@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="sw">
-<head>
-    <meta charset="UTF-8">
-    <title>Fizo Player</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<head><link rel="stylesheet" href="style.css"></head>
 <body>
     <div class="player-container">
         <a href="index.html" class="back-btn">← Rudi Nyuma</a>
-        <video width="100%" controls poster="wakubwa.jpg">
-            <source src="video.mp4" type="video/mp4">
-        </video>
-        <h2>Jina la Muvi</h2>
-        <section class="comments-section">
-            <h3>Maoni</h3>
-            <textarea id="comm" placeholder="Andika maoni..."></textarea>
-            <button onclick="addComm()">Tuma</button>
-            <div id="list"></div>
-        </section>
+        <video width="100%" controls><source src="video.mp4" type="video/mp4"></video>
+        <h2>UNTAMED RIDER</h2>
+        <div class="stats">
+            <span id="view-count">Views: 1,240</span> | <span id="like-count">Likes: 450</span>
+            <button onclick="addLike()">👍 Like</button>
+        </div>
+        <textarea id="comm" placeholder="Andika maoni..."></textarea>
+        <button onclick="addComm()">Tuma</button>
+        <div id="list"></div>
     </div>
     <script>
-        function addComm() {
-            let txt = document.getElementById('comm').value;
-            if(txt) {
-                document.getElementById('list').innerHTML += "<p><strong>Mtumiaji:</strong> " + txt + "</p>";
-                document.getElementById('comm').value = "";
-            }
+        let l = 450;
+        function addLike() { l++; document.getElementById('like-count').innerText = "Likes: " + l; }
+        function addComm() { 
+            let t = document.getElementById('comm').value;
+            if(t) { document.getElementById('list').innerHTML += "<p><strong>Mtumiaji:</strong> " + t + "</p>"; document.getElementById('comm').value = ""; }
         }
     </script>
 </body>
