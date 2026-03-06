@@ -3,40 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fizo Movies Store - Karibu</title>
+    <title>Fizo Movies Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">FIZO MOVIES</div>
+        <h1>FIZO MOVIES STORE</h1>
         <div class="search-box">
             <input type="text" id="searchInput" onkeyup="searchMovie()" placeholder="Tafuta muvi...">
         </div>
+        <nav class="categories">
+            <button onclick="filterMovies('all')">ZOTE</button>
+            <button onclick="filterMovies('action')">ACTION</button>
+            <button onclick="filterMovies('comedy')">COMEDY</button>
+            <button onclick="filterMovies('crime')">CRIME</button>
+        </nav>
     </header>
 
+    <div class="slider">
+        <div class="slides">
+            <img src="wakubwa.jpg" alt="Muvi 1">
+            <img src="series.jpg" alt="Muvi 2">
+            <img src="mpya.jpg" alt="Muvi 3">
+        </div>
+    </div>
+
     <main>
-        <h2 class="section-title">Action Movies</h2>
         <div class="movie-grid" id="movieGrid">
-            <a href="player.html" class="movie-card">
-                <img src="wakubwa.jpg" alt="Sisu 2">
-                <div class="movie-title">Sisu 2</div>
-                <div class="movie-meta">Action | Imetafsiriwa</div>
+            <a href="player.html" class="movie-card" data-category="action" data-title="untamed rider">
+                <img src="wakubwa.jpg" alt="Muvi">
+                <p>UNTAMED RIDER</p>
             </a>
-            
-            <a href="player.html" class="movie-card">
-                <img src="series.jpg" alt="Outside the Wire">
-                <div class="movie-title">Outside the Wire</div>
-                <div class="movie-meta">Action | Netflix</div>
+            <a href="player.html" class="movie-card" data-category="comedy" data-title="series bomba">
+                <img src="series.jpg" alt="Muvi">
+                <p>SERIES BOMBA</p>
+            </a>
+            <a href="player.html" class="movie-card" data-category="crime" data-title="punitive train">
+                <img src="mpya.jpg" alt="Muvi">
+                <p>PUNITIVE TRAIN</p>
             </a>
         </div>
     </main>
 
     <script>
+        function filterMovies(cat) {
+            document.querySelectorAll('.movie-card').forEach(card => {
+                card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? "block" : "none";
+            });
+        }
         function searchMovie() {
             let val = document.getElementById('searchInput').value.toLowerCase();
             document.querySelectorAll('.movie-card').forEach(card => {
-                let title = card.querySelector('.movie-title').innerText.toLowerCase();
-                card.style.display = title.includes(val) ? "block" : "none";
+                card.style.display = card.getAttribute('data-title').includes(val) ? "block" : "none";
             });
         }
     </script>
