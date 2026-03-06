@@ -43,3 +43,15 @@
     </script>
 </body>
 </html>
+<script>
+    function addComment() {
+        let commentText = document.querySelector('textarea').value;
+        if (commentText !== "") {
+            let list = document.getElementById('comment-list');
+            let newComment = document.createElement('p');
+            newComment.innerHTML = "<strong>Mtumiaji:</strong> " + commentText;
+            list.appendChild(newComment);
+            document.querySelector('textarea').value = ""; // Kufuta maandishi baada ya kutuma
+        }
+    }
+</script>
