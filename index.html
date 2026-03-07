@@ -61,6 +61,23 @@
             });
         }
     </script>
+    <script>
+    // Ionyeshe banner baada ya sekunde 2
+    window.onload = function() {
+        if (!localStorage.getItem("cookiesAccepted")) {
+            setTimeout(() => {
+                document.getElementById('cookie-banner').classList.add('show');
+            }, 2000);
+        }
+    }
+
+    // Function ya kukubali
+    function acceptCookies() {
+        localStorage.setItem("cookiesAccepted", "true");
+        document.getElementById('cookie-banner').classList.remove('show');
+    }
+    </script>
+    
 </body>
 </html>
 <footer class="site-footer">
