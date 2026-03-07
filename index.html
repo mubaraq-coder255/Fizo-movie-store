@@ -8,54 +8,38 @@
 </head>
 <body>
     <header>
-        <h1>FIZO MOVIES STORE</h1>
-        <div class="search-box">
-            <input type="text" id="searchInput" onkeyup="searchMovie()" placeholder="Tafuta muvi...">
+        <div class="logo-area">
+            <img src="logo.jpg" class="fizo-logo" alt="Logo">
+            <h1>FIZO MOVIES STORE</h1>
         </div>
+        <input type="text" id="searchInput" onkeyup="searchMovie()" placeholder="Tafuta muvi...">
         <nav class="categories">
             <button onclick="filterMovies('all')">ZOTE</button>
             <button onclick="filterMovies('action')">ACTION</button>
             <button onclick="filterMovies('comedy')">COMEDY</button>
-            <button onclick="filterMovies('crime')">CRIME</button>
         </nav>
     </header>
 
-    <div class="slider">
-        <div class="slides">
-            <img src="wakubwa.jpg" alt="Muvi 1">
-            <img src="series.jpg" alt="Muvi 2">
-            <img src="mpya.jpg" alt="Muvi 3">
-        </div>
-    </div>
-
     <main>
-        <div class="movie-grid" id="movieGrid">
-            <a href="player.html" class="movie-card" data-category="action" data-title="untamed rider">
-                <img src="wakubwa.jpg" alt="Muvi">
-                <p>UNTAMED RIDER</p>
-            </a>
-            <a href="player.html" class="movie-card" data-category="comedy" data-title="series bomba">
-                <img src="series.jpg" alt="Muvi">
-                <p>SERIES BOMBA</p>
-            </a>
-            <a href="player.html" class="movie-card" data-category="crime" data-title="punitive train">
-                <img src="mpya.jpg" alt="Muvi">
-                <p>PUNITIVE TRAIN</p>
-            </a>
-        </div>
+        <div class="movie-grid" id="movieGrid"></div>
     </main>
 
-    <script>
-        function filterMovies(cat) {
-            document.querySelectorAll('.movie-card').forEach(card => {
-                card.style.display = (cat === 'all' || card.getAttribute('data-category') === cat) ? "block" : "none";
+    <div id="cookie-banner" class="cookie-box"><p>Tovuti hii inatumia cookies.</p><button onclick="acceptCookies()">ACCEPT ALL</button></div>
+
+    <script defer>
+        fetch('movies.json').then(res => res.json()).then(data => {
+            const grid = document.getElementById('movieGrid');
+            data.forEach(m => {
+                grid.innerHTML += `<a href="${m.link}" class="movie-card" data-cat="${m.category}" data-title="${m.title.toLowerCase()}">
+                    <img src="${m.image}" loading="lazy"><p>${m.title}</p></a>`;
             });
+        });
+        function filterMovies(cat) {
+            document.querySelectorAll('.movie-card').forEach(c => c.style.display = (cat === 'all' || c.dataset.cat === cat) ? "block" : "none");
         }
         function searchMovie() {
             let val = document.getElementById('searchInput').value.toLowerCase();
-            document.querySelectorAll('.movie-card').forEach(card => {
-                card.style.display = card.getAttribute('data-title').includes(val) ? "block" : "none";
-            });
+            document.querySelectorAll('.movie-card').forEach(c => c.style.display = c.dataset.title.includes(val) ? "block" : "none");
         }
     </script>
 </body>
