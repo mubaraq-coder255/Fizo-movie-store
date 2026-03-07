@@ -126,3 +126,6 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     transition: 0.3s; 
 }
 .social-btn:hover { background: gold; color: #000; }
+.related-section { padding: 20px; border-top: 2px solid gold; margin-top: 20px; }
+.related-section h3 { color: gold; margin-bottom: 15px; }
+/* Tunatumia grid ile ile ya index.html ili muonekano uwe sawa */
