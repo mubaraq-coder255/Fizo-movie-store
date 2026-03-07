@@ -123,15 +123,15 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
 
 .logo-container {
     display: flex;
-    align-items: center;
+    align-items: left;
     text-decoration: none;
     color: gold;
 }
 
 .fizo-logo {
-    width: 30px; /* Logo ndogo na nzuri */
-    height: 30px;
-    border-radius: 50%; /* Mviringo ili ionekane vizuri */
+    width: 10px; /* Logo ndogo na nzuri */
+    height: 10px;
+    border-radius: 30%; /* Mviringo ili ionekane vizuri */
     border: 1px solid gold;
     margin-right: 10px;
 }
