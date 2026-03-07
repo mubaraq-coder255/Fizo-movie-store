@@ -2,26 +2,26 @@
 <html lang="sw">
 <head>
     <meta charset="UTF-8">
-    <title>Player - Fizo Movies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sisu 2 | Fizo Movies</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header"><a href="index.html" class="logo-container">← RUDI NYUMBANI</a></header>
-    <video controls autoplay muted playsinline class="main-video" style="width:100%">
-        <source src="link_ya_muvi.mp4" type="video/mp4">
-    </video>
-    <a href="https://wa.me/255749705400" class="buy-btn">BUY FULL MOVIE</a>
-    <div class="related-section">
-        <h3>Muvi Nyingine:</h3>
-        <div class="movie-grid" id="relatedGrid"></div>
+    <div class="player-container">
+        <video controls poster="wakubwa.jpg" class="main-video">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+        <div class="movie-info">
+            <h1>Sisu 2</h1>
+            <p>👁 330 Views | Action | Imetafsiriwa</p>
+            <a href="https://wa.me/255749705400?text=Nahitaji: Sisu 2" class="buy-btn">BUY FULL MOVIE</a>
+            <div class="action-buttons">
+                <button class="add-btn">+ Watchlist</button>
+                <button class="share-btn">Share</button>
+            </div>
+            <h2 class="desc-title">Description</h2>
+            <p>Muvi ya kusisimua ya kijasusi...</p>
+        </div>
     </div>
-    <script defer>
-        fetch('movies.json').then(res => res.json()).then(data => {
-            const grid = document.getElementById('relatedGrid');
-            data.slice(0, 3).forEach(m => {
-                grid.innerHTML += `<a href="${m.link}" class="movie-card"><img src="${m.image}" loading="lazy"><p>${m.title}</p></a>`;
-            });
-        });
-    </script>
 </body>
 </html>
