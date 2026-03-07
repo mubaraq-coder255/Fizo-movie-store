@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sisu 2 | Fizo Movies</title>
+    <title>Fizo Player | Sisu 2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,17 +11,46 @@
         <video controls poster="wakubwa.jpg" class="main-video">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
         </video>
+
         <div class="movie-info">
             <h1>Sisu 2</h1>
-            <p>👁 330 Views | Action | Imetafsiriwa</p>
-            <a href="https://wa.me/255749705400?text=Nahitaji: Sisu 2" class="buy-btn">BUY FULL MOVIE</a>
+            <div class="stats-line">👁 330 Views | Action | Imetafsiriwa</div>
+            
+            <a href="https://wa.me/255749705400?text=Habari, Nahitaji kuDownload muvi: Sisu 2" class="buy-btn">
+                BUY FULL MOVIE
+            </a>
+            
             <div class="action-buttons">
-                <button class="add-btn">+ Watchlist</button>
-                <button class="share-btn">Share</button>
+                <button class="add-btn" onclick="addToWatchlist()">+ Watchlist</button>
+                <button class="share-btn" onclick="shareMovie()">Share</button>
             </div>
-            <h2 class="desc-title">Description</h2>
-            <p>Muvi ya kusisimua ya kijasusi...</p>
         </div>
+
+        <div class="desc-box">
+            <h2 class="desc-title">Description</h2>
+            <p>Muvi ya kusisimua ya kijasusi inayohusu ukombozi wa taifa...</p>
+        </div>
+
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="#">About Us</a> | <a href="#">Terms</a> | <a href="#">Contact</a>
+            </div>
+            <p>Copyright © 2026 Fizo Movies Store.</p>
+        </footer>
     </div>
+
+    <script>
+        function addToWatchlist() {
+            alert("Muvi imeongezwa kwenye Watchlist!");
+        }
+
+        function shareMovie() {
+            if (navigator.share) {
+                navigator.share({ title: document.title, url: window.location.href });
+            } else {
+                alert("Link imenakiliwa!");
+            }
+        }
+    </script>
 </body>
 </html>
