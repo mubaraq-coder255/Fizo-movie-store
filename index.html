@@ -37,8 +37,21 @@
     <a href="all-movies.html" class="view-all-btn">ANGALIA ZOTE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="movie-grid" id="movieGrid"></div>
-<script defer>
-    // Kodi yako ya fetch hapa...
+<script>
+    fetch('movies.json')
+    .then(res => res.json())
+    .then(data => {
+        const grid = document.getElementById('relatedGrid');
+        // Tutachukua muvi 2 za kwanza kama mfano wa 'related'
+        data.slice(0, 2).forEach(movie => {
+            grid.innerHTML += `
+                <a href="${movie.link}" class="movie-card">
+                    <img src="${movie.image}">
+                    <p style="font-size: 12px;">${movie.title}</p>
+                </a>
+            `;
+        });
+    });
 </script>
     </main>
 
