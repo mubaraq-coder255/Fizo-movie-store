@@ -34,7 +34,26 @@
             <p>Muvi ya kusisimua ya kijasusi inayohusu ukombozi wa taifa...</p>
         </div>
         <div class="related-section">
-    <h3>MUVI NYINGINE KALi:</h3>
+    <h3>FILAMU NYINGINE KALI:</h3>
+    <div class="movie-grid" id="relatedMovies">
+    </div>
+
+<script>
+    fetch('movies.json')
+    .then(response => response.json())
+    .then(data => {
+        const grid = document.getElementById('relatedMovies');
+        // Inachukua muvi zote zilizopo kwenye movies.json na kuziweka hapa
+        grid.innerHTML = data.map(m => `
+            <a href="${m.link}" class="movie-card">
+                <img src="${m.image}" loading="lazy">
+                <p>${m.title}</p>
+            </a>
+        `).join('');
+    })
+    .catch(error => console.error('Hitilafu kwenye data:', error));
+</script>
+            
     <div class="movie-grid" id="relatedGrid">
         </div>
         </div>
