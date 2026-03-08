@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fizo Player | Sisu 2</title>
@@ -18,28 +17,9 @@
         <video controls poster="wakubwa.jpg" class="main-video">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
         </video>
-        <div class="stats-bar">
-    <p>views <span id="viewCount">0</span> Views | 👍 <span id="likeCount">0</span> Likes</p>
-    <button onclick="addLike()">👍 LIKE</button>
-</div>
-
-<script>
-    // Hii script inasoma data na kuonyesha views/likes
-    fetch('movies.json').then(res => res.json()).then(data => {
-        const m = data[0]; // Hapa uta-filter kulingana na muvi inayocheza
-        document.getElementById('viewCount').innerText = m.views;
-        document.getElementById('likeCount').innerText = m.likes;
-    });
-
-    function addLike() {
-        let count = parseInt(document.getElementById('likeCount').innerText);
-        document.getElementById('likeCount').innerText = count + 1;
-        // Hapa unaweza kuongeza kodi ya kuhifadhi kwenye LocalStorage
-    }
-</script>
         <div class="movie-info">
             <h1>Sisu 2</h1>
-            <div class="stats-line">Filamu za kusisimua | Imetafsiriwa</div>
+            <div class="stats-line">.       Action Movie | Imetafsiriwa</div>
             <a href="https://wa.me/255749705400?text=Habari%20Fizo,%20nahitaji%20kununua%20muvi%20ya:%20SISU%202" class="buy-btn">
     <i class="fab fa-whatsapp"></i> NUNUA FILAMU HAPA 
 </a>
@@ -50,29 +30,10 @@
         </div>
         <div class="desc-box">
             <h2 class="desc-title">Description</h2>
-            <p>Muvi ya kusisimua ya kijasusi inayohusu ukombozi wa taifa...</p>
+            <p>Filamu ya kusisimua ya kijasusi inayohusu ukombozi wa taifa...</p>
         </div>
         <div class="related-section">
-    <h3>FILAMU NYINGINE KALI:</h3>
-    <div class="movie-grid" id="relatedMovies">
-    </div>
-
-<script>
-    fetch('movies.json')
-    .then(response => response.json())
-    .then(data => {
-        const grid = document.getElementById('relatedMovies');
-        // Inachukua muvi zote zilizopo kwenye movies.json na kuziweka hapa
-        grid.innerHTML = data.map(m => `
-            <a href="${m.link}" class="movie-card">
-                <img src="${m.image}" loading="lazy">
-                <p>${m.title}</p>
-            </a>
-        `).join('');
-    })
-    .catch(error => console.error('Hitilafu kwenye data:', error));
-</script>
-            
+    <h3>FILAMU NYENGINE KALI:</h3>
     <div class="movie-grid" id="relatedGrid">
         </div>
         </div>
