@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fizo Movies Store</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Fizo Movies Store - Jipatie muvi mpya zilizotafsiriwa na series kali kwa bei nafuu.">
-<meta name="keywords" content="Muvi, Tanzania, Sisu 2, Action Movies, Fizo Store, Tafsiri">
-<meta name="author" content="Fizo">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-   <h1>FIZO MOVIES STORE</h1>
+        <h1>FIZO MOVIES STORE</h1>
         <div class="search-box">
             <input type="text" id="searchInput" onkeyup="searchMovie()" placeholder="Tafuta muvi...">
         </div>
@@ -21,9 +17,9 @@
             <button onclick="filterMovies('action')">ACTION</button>
             <button onclick="filterMovies('comedy')">COMEDY</button>
             <button onclick="filterMovies('crime')">CRIME</button>
-            <button onclick="filterMovies('mpya')">MPYA</button>
         </nav>
     </header>
+
     <div class="slider">
         <div class="slides">
             <img src="wakubwa.jpg" alt="Muvi 1">
@@ -31,28 +27,22 @@
             <img src="mpya.jpg" alt="Muvi 3">
         </div>
     </div>
-    
+
     <main>
-        <div class="view-all-container">
-    <a href="all-movies.html" class="view-all-btn">ANGALIA ZOTE <i class="fas fa-chevron-right"></i></a>
+        <div class="movie-grid" id="movieGrid">
+            <a href="player.html" class="movie-card" data-category="action" data-title="untamed rider">
+                <img src="wakubwa.jpg" alt="Muvi">
+                <p>UNTAMED RIDER</p>
+            </a>
+            <a href="player.html" class="movie-card" data-category="comedy" data-title="series bomba">
+                <img src="series.jpg" alt="Muvi">
+                <p>SERIES BOMBA</p>
+            </a>
+            <a href="player.html" class="movie-card" data-category="crime" data-title="punitive train">
+                <img src="mpya.jpg" alt="Muvi">
+                <p>PUNITIVE TRAIN</p>
+            </a>
         </div>
-        <div class="movie-grid" id="movieGrid"></div>
-<script>
-    fetch('movies.json')
-    .then(res => res.json())
-    .then(data => {
-        const grid = document.getElementById('relatedGrid');
-        // Tutachukua muvi 2 za kwanza kama mfano wa 'related'
-        data.slice(0, 2).forEach(movie => {
-            grid.innerHTML += `
-                <a href="${movie.link}" class="movie-card">
-                    <img src="${movie.image}">
-                    <p style="font-size: 12px;">${movie.title}</p>
-                </a>
-            `;
-        });
-    });
-</script>
     </main>
 
     <script>
@@ -68,42 +58,5 @@
             });
         }
     </script>
-    <script>
-    // Ionyeshe banner baada ya sekunde 2
-    window.onload = function() {
-        if (!localStorage.getItem("cookiesAccepted")) {
-            setTimeout(() => {
-                document.getElementById('cookie-banner').classList.add('show');
-            }, 2000);
-        }
-    }
-
-    // Function ya kukubali
-    function acceptCookies() {
-        localStorage.setItem("cookiesAccepted", "true");
-        document.getElementById('cookie-banner').classList.remove('show');
-    }
-    </script>
-    
 </body>
 </html>
-<footer class="site-footer">
-    <div class="footer-links">
-        <a href="#">About</a> | <a href="#">Contact</a>
-    </div>
-    <p>Connect with us:</p>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/share/1JBskKRo2A/" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://wa.me/255749705400?text=Habari+Fizo+Movies+Online%2C+nahitaji+kupata+burudani+ya+filamu" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/fizomoviesonline?igsh=OTR1djQ1emQxYzZp" class="social-btn"><i class="fab fa-instagram"></i></a>
-    </div>
-    <p>Copyright © 2026 Fizo Movies Store.</p>
-</footer>
-
-<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="top-btn">
-    <i class="fas fa-chevron-up"></i>
-</button>
-<div id="cookie-banner" class="cookie-box">
-    <button onclick="acceptCookies()">ACCEPT ALL</button>
-</div>
-</body>
