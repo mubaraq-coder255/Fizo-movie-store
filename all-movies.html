@@ -25,7 +25,7 @@
             data.forEach(movie => {
                 grid.innerHTML += `
                     <a href="${movie.link}" class="movie-card">
-                        <img src="${movie.image}">
+                        <img src="${movie.image}" loading="lazy" alt="${movie.title}">
                         <p>${movie.title}</p>
                     </a>
                 `;
