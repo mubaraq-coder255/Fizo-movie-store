@@ -14,9 +14,10 @@
     </nav>
 <body>
     <div class="player-container">
-        <video controls poster="wakubwa.jpg" class="main-video">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        </video>
+        <video controls autoplay muted playsinline poster="wakubwa.jpg" class="main-video">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Kivinjari chako hakikubali video hii.
+</video>
 
         <div class="movie-info">
             <h1>Sisu 2</h1>
@@ -50,18 +51,15 @@
         </footer>
     </div>
 
-    <script>
-        function addToWatchlist() {
-            alert("Muvi imeongezwa kwenye Watchlist!");
-        }
+<script>
+    const videoPlayer = document.querySelector('video');
 
-        function shareMovie() {
-            if (navigator.share) {
-                navigator.share({ title: document.title, url: window.location.href });
-            } else {
-                alert("Link imenakiliwa!");
-            }
-        }
-    </script>
+    videoPlayer.onended = function() {
+        // Hapa tunaweka link ya video inayofuata (mfano wa automatic transition)
+        // Kwa sasa tunamrudisha kwenye orodha ya muvi au tunaweza kufungua muvi inayofuata
+        alert("Video imeisha! Inapakia inayofuata...");
+        window.location.href = "all-movies.html"; // Mteja anarudishwa kwenye orodha ili achague nyingine
+    };
+</script>
 </body>
 </html>
