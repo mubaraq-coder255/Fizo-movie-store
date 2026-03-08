@@ -408,3 +408,29 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
     transform: scale(1.02);
 }
+/* Urembo wa Kadi za Muvi na Glow Effect */
+.movie-card {
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: all 0.4s ease; /* Inafanya mabadiliko yawe laini */
+    position: relative;
+}
+
+/* Glow Effect inapotokea wakati wa kugusa (Hover/Touch) */
+.movie-card:hover {
+    border-color: #ffcc00; /* Inabadilika rangi kuwa gold */
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5); /* Hii ndiyo glow yenyewe */
+    transform: translateY(-5px); /* Inainuka juu kidogo ikiguswa */
+}
+
+/* Urembo wa maandishi ya muvi chini ya picha */
+.movie-card p {
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    margin: 8px 0;
+    padding: 0 5px;
+}
