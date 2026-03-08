@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-    <meta http-equiv="Cache-Control" content="max-age=31536000, public">
-    <meta name="description" content="Fizo Movies Store - Jipatie muvi mpya zilizotafsiriwa na series kali kwa bei nafuu.">
-<meta name="keywords" content="Muvi, Tanzania, Sisu 2, Action Movies, Fizo Store, Tafsiri">
-<meta name="author" content="Fizo">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fizo Movies Store</title>
@@ -34,25 +30,28 @@
     </div>
 
     <main>
+        <div id="movieGrid" class="movie-grid"></div>
+        
         <script>
-    fetch('movies.json')
-    .then(response => response.json())
-    .then(data => {
-        const grid = document.getElementById('movieGrid');
-        grid.innerHTML = ""; // Kusafisha grid kabla ya kuongeza
-        data.forEach(movie => {
-            grid.innerHTML += `
-                <a href="${movie.link}" 
-                   class="movie-card" 
-                   data-category="${movie.category}" 
-                   data-title="${movie.title.toLowerCase()}">
-                    <img src="${movie.image}" alt="${movie.title}">
-                    <p>${movie.title}</p>
-                </a>
-            `;
-        });
-    });
-</script>
+            fetch('movies.json')
+            .then(response => response.json())
+            .then(data => {
+                const grid = document.getElementById('movieGrid');
+                grid.innerHTML = ""; 
+                data.forEach(movie => {
+                    grid.innerHTML += `
+                        <a href="${movie.link}" 
+                           class="movie-card" 
+                           data-category="${movie.category}" 
+                           data-title="${movie.title.toLowerCase()}">
+                            <img src="${movie.image}" alt="${movie.title}">
+                            <p>${movie.title}</p>
+                        </a>
+                    `;
+                });
+            })
+            .catch(err => console.error("Tatizo la JSON:", err));
+        </script>
     </main>
 
     <script>
@@ -64,45 +63,27 @@
         function searchMovie() {
             let val = document.getElementById('searchInput').value.toLowerCase();
             document.querySelectorAll('.movie-card').forEach(card => {
-                card.style.display = card.getAttribute('data-title').includes(val) ? "block" : "none";
+                const title = card.getAttribute('data-title') || "";
+                card.style.display = title.includes(val) ? "block" : "none";
             });
         }
     </script>
     
     <footer class="site-footer">
-‎    <div class="footer-links">
-‎        <a href="#">About</a> | <a href="#">Contact</a>
-‎    </div>
-‎    <p>Connect with us:</p>
-‎    <div class="social-icons">
-‎        <a href="https://www.facebook.com/share/1JBskKRo2A/" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-‎        <a href="https://wa.me/255749705400?text=Habari+Fizo+Movies+Online%2C+nahitaji+kupata+burudani+ya+filamu" class="social-btn"><i class="fab fa-whatsapp"></i></a>
-‎        <a href="https://www.instagram.com/fizomoviesonline?igsh=OTR1djQ1emQxYzZp" class="social-btn"><i class="fab fa-instagram"></i></a>
-‎    </div>
-‎    <p>Copyright © 2026 Fizo Movies Store.</p>
-‎</footer>
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="top-btn">
-    <i class="fas fa-chevron-up"></i>
-    </button>
-<div id="cookie-banner" class="cookie-box">
-    <a href="#">Soma zaidi</a></p>
-    <button onclick="acceptCookies()">ACCEPT ALL</button>
-</div>
-    <script>
-    // Ionyeshe banner baada ya sekunde 2
-    window.onload = function() {
-        if (!localStorage.getItem("cookiesAccepted")) {
-            setTimeout(() => {
-                document.getElementById('cookie-banner').classList.add('show');
-            }, 2000);
-        }
-    }
+        <div class="footer-links">
+            <a href="#">About</a> | <a href="#">Contact</a>
+        </div>
+        <p>Connect with us:</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1JBskKRo2A/" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/255749705400?text=Habari+Fizo+Movies+Online" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/fizomoviesonline" class="social-btn"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>Copyright © 2026 Fizo Movies Store.</p>
+    </footer>
 
-    // Function ya kukubali
-    function acceptCookies() {
-        localStorage.setItem("cookiesAccepted", "true");
-        document.getElementById('cookie-banner').classList.remove('show');
-    }
-    </script>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 </body>
 </html>
