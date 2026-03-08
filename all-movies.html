@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <title>Muvi Zote - Fizo Movies Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo-container">
+            <span class="site-title">← RUDI NYUMBANI</span>
+        </a>
+    </header>
+
+    <div style="padding: 20px;">
+        <h2 style="color: gold;">MAKUTABA YOTE YA MUVI</h2>
+        <div class="movie-grid" id="allMoviesGrid"></div>
+    </div>
+
+    <script>
+        fetch('movies.json')
+        .then(res => res.json())
+        .then(data => {
+            const grid = document.getElementById('allMoviesGrid');
+            data.forEach(movie => {
+                grid.innerHTML += `
+                    <a href="${movie.link}" class="movie-card">
+                        <img src="${movie.image}">
+                        <p>${movie.title}</p>
+                    </a>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
+
