@@ -37,21 +37,8 @@
     <a href="all-movies.html" class="view-all-btn">ANGALIA ZOTE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div class="movie-grid" id="movieGrid"></div>
-
-<script>
-    fetch('movies.json')
-    .then(response => response.json())
-    .then(data => {
-        const grid = document.getElementById('movieGrid');
-        data.forEach(movie => {
-            grid.innerHTML += `
-                <a href="${movie.link}" class="movie-card">
-                    <img src="${movie.image}" loading="lazy" alt="${movie.title}">
-                    <p>${movie.title}</p>
-                </a>
-            `;
-        });
-    });
+<script defer>
+    // Kodi yako ya fetch hapa...
 </script>
     </main>
 
