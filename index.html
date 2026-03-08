@@ -34,16 +34,19 @@
     </div>
 
     <main>
-        <div class="movie-grid" id="movieGrid"></div>
-<script>
+        <script>
     fetch('movies.json')
     .then(response => response.json())
     .then(data => {
         const grid = document.getElementById('movieGrid');
+        grid.innerHTML = ""; // Kusafisha grid kabla ya kuongeza
         data.forEach(movie => {
             grid.innerHTML += `
-                <a href="${movie.link}" class="movie-card">
-                    <img src="${movie.image}" loading="lazy" alt="${movie.title}">
+                <a href="${movie.link}" 
+                   class="movie-card" 
+                   data-category="${movie.category}" 
+                   data-title="${movie.title.toLowerCase()}">
+                    <img src="${movie.image}" alt="${movie.title}">
                     <p>${movie.title}</p>
                 </a>
             `;
