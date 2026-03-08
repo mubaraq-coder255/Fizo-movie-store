@@ -30,20 +30,22 @@
     </div>
 
     <main>
-        <div class="movie-grid" id="movieGrid">
-            <a href="player.html" class="movie-card" data-category="action" data-title="untamed rider">
-                <img src="wakubwa.jpg" alt="Muvi">
-                <p>UNTAMED RIDER</p>
-            </a>
-            <a href="player.html" class="movie-card" data-category="comedy" data-title="series bomba">
-                <img src="series.jpg" alt="Muvi">
-                <p>SERIES BOMBA</p>
-            </a>
-            <a href="player.html" class="movie-card" data-category="crime" data-title="punitive train">
-                <img src="mpya.jpg" alt="Muvi">
-                <p>PUNITIVE TRAIN</p>
-            </a>
-        </div>
+        <div class="movie-grid" id="movieGrid"></div>
+<script>
+    fetch('movies.json')
+    .then(response => response.json())
+    .then(data => {
+        const grid = document.getElementById('movieGrid');
+        data.forEach(movie => {
+            grid.innerHTML += `
+                <a href="${movie.link}" class="movie-card">
+                    <img src="${movie.image}" alt="${movie.title}">
+                    <p>${movie.title}</p>
+                </a>
+            `;
+        });
+    });
+</script>
     </main>
 
     <script>
