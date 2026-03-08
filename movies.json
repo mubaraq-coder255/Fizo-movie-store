@@ -3,16 +3,22 @@
     "title": "UNTAMED RIDER",
     "image": "wakubwa.jpg",
     "link": "player.html"
+    "Views":456,
+    "Likes":123
   },
   {
     "title": "SERIES BOMBA",
     "image": "series.jpg",
     "link": "player.html"
+    "Views":3000
+    "Likes":707
   },
   {
     "title": "PUNITIVE TRAIN",
     "image": "mpya.jpg",
     "link": "player.html"
+    "Views":17k,
+    "Likes":889
   }
 ]
 
