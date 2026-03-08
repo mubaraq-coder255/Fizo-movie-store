@@ -345,3 +345,66 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     text-align: center;
     margin: 5px 0;
 }
+/* 1. SISU 2 na Info (Centering & Styling) */
+.movie-info {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.movie-info h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #fff;
+    margin: 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats-text {
+    color: #ffcc00; /* Gold color */
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* 2. DESCRIPTION Pill Bar (Kama kidonge, haifiki mwisho) */
+.description-header {
+    background: #ff0000;
+    color: #fff;
+    padding: 8px 30px;
+    border-radius: 50px; /* Hii ndio inafanya ionekane kama kidonge */
+    display: inline-block; /* Hii inafanya bar ifuate ukubwa wa neno tu */
+    font-weight: bold;
+    font-size: 18px;
+    margin: 15px auto;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+/* 3. FILAMU NYENGINE KALI (Styling ya Kuvutia) */
+.related-title {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 10px 0;
+    background: linear-gradient(90deg, transparent, #333, transparent);
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* 4. Movie Cards Glow Effect (Ili kung'aa) */
+.movie-card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #333;
+    transition: 0.4s;
+}
+
+.movie-card:hover {
+    border-color: #ffcc00;
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    transform: scale(1.02);
+}
