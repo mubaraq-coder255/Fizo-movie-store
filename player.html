@@ -18,6 +18,25 @@
         <video controls poster="wakubwa.jpg" class="main-video">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
         </video>
+        <div class="stats-bar">
+    <p>👁 <span id="viewCount">0</span> Views | ❤️ <span id="likeCount">0</span> Likes</p>
+    <button onclick="addLike()">❤️ LIKE</button>
+</div>
+
+<script>
+    // Hii script inasoma data na kuonyesha views/likes
+    fetch('movies.json').then(res => res.json()).then(data => {
+        const m = data[0]; // Hapa uta-filter kulingana na muvi inayocheza
+        document.getElementById('viewCount').innerText = m.views;
+        document.getElementById('likeCount').innerText = m.likes;
+    });
+
+    function addLike() {
+        let count = parseInt(document.getElementById('likeCount').innerText);
+        document.getElementById('likeCount').innerText = count + 1;
+        // Hapa unaweza kuongeza kodi ya kuhifadhi kwenye LocalStorage
+    }
+</script>
         <div class="movie-info">
             <h1>Sisu 2</h1>
             <div class="stats-line">Views 988 | Action | Imetafsiriwa</div>
