@@ -2,23 +2,25 @@
   {
     "title": "UNTAMED RIDER",
     "image": "wakubwa.jpg",
-    "link": "player.html"
-    "Views":456,
-    "Likes":123
+    "link": "player.html?v=untamed",
+    "category": "action",
+    "views": 988,
+    "likes": 120
   },
   {
     "title": "SERIES BOMBA",
     "image": "series.jpg",
-    "link": "player.html"
-    "Views":3000
-    "Likes":707
+    "link": "player.html?v=series",
+    "category": "comedy",
+    "views": 450,
+    "likes": 85
   },
   {
     "title": "PUNITIVE TRAIN",
     "image": "mpya.jpg",
-    "link": "player.html"
-    "Views":17k,
-    "Likes":889
+    "link": "player.html?v=punitive",
+    "category": "crime",
+    "views": 320,
+    "likes": 95
   }
 ]
-
