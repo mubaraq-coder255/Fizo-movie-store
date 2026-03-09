@@ -208,19 +208,18 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     padding: 0 15px;
 }
 
-/* Inabadilisha kichwa cha habari kiwe kama bar ya Description */
-.related-title {
-    background: #ff0000; /* Rangi nyekundu kama description */
-    color: #fff;
-    padding: 8px 20px;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 8px; /* Kama unataka iwe duara zaidi weka 50px */
-    display: block;
-    margin: 20px 10px 10px 10px;
-    text-align: center;
-    text-transform: uppercase;
-}
+‎/* 3. FILAMU NYENGINE KALI (Styling ya Kuvutia) */
+‎.related-title {
+‎    color: #fff;
+‎    font-size: 20px;
+‎    text-align: center;
+‎    margin: 20px 0 10px 0;
+‎    background: linear-gradient(90deg, transparent, #333, transparent);
+‎    padding: 10px 0;
+‎    text-transform: uppercase;
+‎    font-weight: bold;
+‎    letter-spacing: 2px;
+‎}
 
 .movie-grid {
     display: grid;
