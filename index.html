@@ -85,5 +85,38 @@
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="top-btn">
         <i class="fas fa-chevron-up"></i>
     </button>
+    <script>
+// 1. Utendaji wa Watchlist (Kubadili rangi na maandishi)
+const watchlistBtn = document.querySelector('.add-btn');
+
+watchlistBtn.addEventListener('click', function() {
+    if (this.style.backgroundColor === 'rgb(108, 117, 125)') { // Kama ni kijivu
+        this.style.backgroundColor = '#28a745'; // Rudi kijani
+        this.innerHTML = '+ Watchlist';
+    } else {
+        this.style.backgroundColor = '#6c757d'; // Geuka kuwa kijivu
+        this.innerHTML = '✓ Added';
+    }
+});
+
+// 2. Utendaji wa Share (Kusambaza link ya tovuti)
+const shareBtn = document.querySelector('.share-btn');
+
+shareBtn.addEventListener('click', async () => {
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'Angalia SISU 2 hapa!',
+                text: 'Filamu kali iliyotafsiriwa, ipate sasa!',
+                url: window.location.href // Inachukua link ya ukurasa huu huu
+            });
+        } catch (err) {
+            console.log('Share canceled');
+        }
+    } else {
+        alert("Browser yako haisupport share direct, nakili link hapo juu.");
+    }
+});
+    </script>
 </body>
 </html>
