@@ -166,7 +166,7 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     padding: 14px;
     border-radius: 50px; /* Inakuwa na duara pembeni (Oval) */
     margin: 0 auto 15px auto;
-    width: 90%; /* Isifike mwisho kabisa wa kioo */
+    width: 80%; /* Isifike mwisho kabisa wa kioo */
     font-weight: bold;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
@@ -196,6 +196,8 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     border-radius: 50px; /* Inakuwa kama kidonge */
     display: table; /* Inafanya bar iwe fupi kulingana na neno */
     margin: 0 auto 10px auto; /* Inaiweka katikati kabisa */
+    box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+    width: 80%; /* Isifike mwisho kabisa wa kioo */
 }
 
 .description-text {
