@@ -208,16 +208,18 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     padding: 0 15px;
 }
 
-/* 5. FILAMU NYENGINE KALI na Grid (Bila Nafasi) */
+/* Inabadilisha kichwa cha habari kiwe kama bar ya Description */
 .related-title {
-    color: #ffcc00;
-    font-size: 18px;
+    background: #ff0000; /* Rangi nyekundu kama description */
+    color: #fff;
+    padding: 8px 20px;
     font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px; /* Kama unataka iwe duara zaidi weka 50px */
+    display: block;
+    margin: 20px 10px 10px 10px;
     text-align: center;
-    margin: 0 0 5px 0; /* Inaondoa nafasi ya chini kabisa */
     text-transform: uppercase;
-    background: rgba(255, 204, 0, 0.1);
-    padding: 10px 0;
 }
 
 .movie-grid {
