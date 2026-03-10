@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fizo Movies Store</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -29,20 +30,28 @@
     </div>
 
     <main>
-        <div class="movie-grid" id="movieGrid">
-            <a href="player.html" class="movie-card" data-category="action" data-title="untamed rider">
-                <img src="wakubwa.jpg" alt="Muvi">
-                <p>UNTAMED RIDER</p>
-            </a>
-            <a href="player.html" class="movie-card" data-category="comedy" data-title="series bomba">
-                <img src="series.jpg" alt="Muvi">
-                <p>SERIES BOMBA</p>
-            </a>
-            <a href="player.html" class="movie-card" data-category="crime" data-title="punitive train">
-                <img src="mpya.jpg" alt="Muvi">
-                <p>PUNITIVE TRAIN</p>
-            </a>
-        </div>
+        <div id="movieGrid" class="movie-grid"></div>
+        
+        <script>
+            fetch('movies.json')
+            .then(response => response.json())
+            .then(data => {
+                const grid = document.getElementById('movieGrid');
+                grid.innerHTML = ""; 
+                data.forEach(movie => {
+                    grid.innerHTML += `
+                        <a href="${movie.link}" 
+                           class="movie-card" 
+                           data-category="${movie.category}" 
+                           data-title="${movie.title.toLowerCase()}">
+                            <img src="${movie.image}" alt="${movie.title}">
+                            <p>${movie.title}</p>
+                        </a>
+                    `;
+                });
+            })
+            .catch(err => console.error("Tatizo la JSON:", err));
+        </script>
     </main>
 
     <script>
@@ -54,9 +63,27 @@
         function searchMovie() {
             let val = document.getElementById('searchInput').value.toLowerCase();
             document.querySelectorAll('.movie-card').forEach(card => {
-                card.style.display = card.getAttribute('data-title').includes(val) ? "block" : "none";
+                const title = card.getAttribute('data-title') || "";
+                card.style.display = title.includes(val) ? "block" : "none";
             });
         }
     </script>
+    
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="#">About</a> | <a href="#">Contact</a>
+        </div>
+        <p>Connect with us:</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1JBskKRo2A/" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me/255749705400?text=Habari+Fizo+Movies+Online" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/fizomoviesonline" class="social-btn"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>Copyright © 2026 Fizo Movies Store.</p>
+    </footer>
+
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="top-btn">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 </body>
 </html>
