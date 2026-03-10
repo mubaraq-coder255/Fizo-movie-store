@@ -277,4 +277,32 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     margin: 8px 0;
     padding: 0 5px;
 }
+/* 1. Kichwa cha habari kiwe kama Kidonge (Pill Bar) */
+.related-title {
+    background: #ff0000;
+    color: #fff;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50px; /* Muundo wa kidonge */
+    display: table; /* Inafanya bar iwe fupi kulingana na neno */
+    margin: 20px auto 15px auto; /* Katikati kabisa */
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3);
+}
+
+/* 2. Animation picha ikiguswa (Hover Effect) */
+.movie-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:active {
+    transform: scale(0.95); /* Inajirudisha ndani kidogo ikibonyezwa */
+}
+
+.movie-card:hover {
+    transform: translateY(-8px); /* Inainuka juu kidogo */
+    box-shadow: 0 10px 20px rgba(255, 204, 0, 0.4);
+    border-color: gold;
+}
 
