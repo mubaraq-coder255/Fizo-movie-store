@@ -1,26 +1,22 @@
 [
   {
+    "id": 1,
+    "title": "SISU 2",
+    "category": "Action Movie",
+    "status": "Imetafsiriwa",
+    "image": "sisu2.jpg",
+    "video_link": "https://video.com/sisu2.mp4",
+    "buy_link": "https://wa.me/255xxxxxxxxx",
+    "description": "Filamu ya kusisimua ya kijasusi inayohusu ukombozi wa taifa..."
+  },
+  {
+    "id": 2,
     "title": "UNTAMED RIDER",
-    "image": "wakubwa.jpg",
-    "link": "player.html?v=untamed",
-    "category": "action",
-    "views": 988,
-    "likes": 120
-  },
-  {
-    "title": "SERIES BOMBA",
-    "image": "series.jpg",
-    "link": "player.html?v=series",
-    "category": "comedy",
-    "views": 450,
-    "likes": 85
-  },
-  {
-    "title": "PUNITIVE TRAIN",
-    "image": "mpya.jpg",
-    "link": "player.html?v=punitive",
-    "category": "crime",
-    "views": 320,
-    "likes": 95
+    "category": "Adventure",
+    "status": "Imetafsiriwa",
+    "image": "rider.jpg",
+    "video_link": "https://video.com/rider.mp4",
+    "buy_link": "https://wa.me/255xxxxxxxxx",
+    "description": "Hadithi ya kusisimua ya mpanda farasi..."
   }
 ]
