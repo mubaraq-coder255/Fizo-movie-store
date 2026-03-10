@@ -36,21 +36,6 @@
     <div class="related-title">FILAMU NYENGINE KALI</div>
             <div class="movie-grid" id="relatedMovies">
     </div>
-            <script>
-fetch('movie.json')
-  .then(response => response.json())
-  .then(data => {
-    // Tuseme tunataka muvi ya kwanza (id: 1)
-    const movie = data[0]; 
-
-    // Kubadilisha majina na maelezo kwenye HTML
-    document.querySelector('.movie-title').innerText = movie.title;
-    document.querySelector('.movie-category').innerText = `| ${movie.category} | ${movie.status} |`;
-    document.querySelector('.movie-desc').innerText = movie.description;
-    document.querySelector('.buy-btn').href = movie.buy_link;
-    // Nenda hivyo hivyo kwa image na video_link...
-  });
-            </script>
 
 <script>
     fetch('movies.json')
