@@ -37,15 +37,20 @@
         </div>
         <div id="movieGrid" class="movie-grid">
     </div>
-
 <script>
+let allMovies = []; // Hapa tunahifadhi muvi zote
+
 fetch('movie.json')
   .then(response => response.json())
-  .then(movies => {
+  .then(data => {
+    allMovies = data;
+    renderMovies(allMovies); // Inaonyesha zote mwanzoni
+  });
+
+function renderMovies(movies) {
     const grid = document.getElementById('movieGrid');
-    
+    grid.innerHTML = ''; // Inafuta kadi za zamani
     movies.forEach(movie => {
-        // Tunatengeneza kadi kwa kila muvi kwenye JSON
         grid.innerHTML += `
             <a href="player.html?id=${movie.id}" class="movie-card">
                 <img src="${movie.image}" alt="${movie.title}">
@@ -53,10 +58,18 @@ fetch('movie.json')
             </a>
         `;
     });
-  });
-</script>
-    </main>
+}
 
+function filterMovies(category) {
+    if (category === 'Zote') {
+        renderMovies(allMovies);
+    } else {
+        const filtered = allMovies.filter(m => m.category === category);
+        renderMovies(filtered);
+    }
+}
+<script>
+    
     <script>
         function filterMovies(cat) {
             document.querySelectorAll('.movie-card').forEach(card => {
