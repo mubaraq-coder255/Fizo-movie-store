@@ -30,46 +30,30 @@
     </div>
 
     <main>
-        <div class="categories">
-    <button onclick="filterMovies('Zote')">Zote</button>
-    <button onclick="filterMovies('Action')">Action</button>
-    <button onclick="filterMovies('Comedy')">Comedy</button>
-        </div>
-        <div id="movieGrid" class="movie-grid">
-    </div>
-<script>
-let allMovies = []; // Hapa tunahifadhi muvi zote
+        <div id="movieGrid" class="movie-grid"></div>
+        
+        <script>
+            fetch('movies.json')
+            .then(response => response.json())
+            .then(data => {
+                const grid = document.getElementById('movieGrid');
+                grid.innerHTML = ""; 
+                data.forEach(movie => {
+                    grid.innerHTML += `
+                        <a href="${movie.link}" 
+                           class="movie-card" 
+                           data-category="${movie.category}" 
+                           data-title="${movie.title.toLowerCase()}">
+                            <img src="${movie.image}" alt="${movie.title}">
+                            <p>${movie.title}</p>
+                        </a>
+                    `;
+                });
+            })
+            .catch(err => console.error("Tatizo la JSON:", err));
+        </script>
+    </main>
 
-fetch('movie.json')
-  .then(response => response.json())
-  .then(data => {
-    allMovies = data;
-    renderMovies(allMovies); // Inaonyesha zote mwanzoni
-  });
-
-function renderMovies(movies) {
-    const grid = document.getElementById('movieGrid');
-    grid.innerHTML = ''; // Inafuta kadi za zamani
-    movies.forEach(movie => {
-        grid.innerHTML += `
-            <a href="player.html?id=${movie.id}" class="movie-card">
-                <img src="${movie.image}" alt="${movie.title}">
-                <p>${movie.title}</p>
-            </a>
-        `;
-    });
-}
-
-function filterMovies(category) {
-    if (category === 'Zote') {
-        renderMovies(allMovies);
-    } else {
-        const filtered = allMovies.filter(m => m.category === category);
-        renderMovies(filtered);
-    }
-}
-<script>
-    
     <script>
         function filterMovies(cat) {
             document.querySelectorAll('.movie-card').forEach(card => {
