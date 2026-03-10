@@ -334,4 +334,33 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     margin: 20px auto 15px auto;
     text-transform: uppercase;
 }
+/* --- VITUFE KUNG'AA (Button Glow) --- */
+.add-btn:hover {
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7); /* Glow ya kijani */
+    transform: scale(1.05);
+}
+
+.share-btn:hover {
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* Glow ya bluu */
+    transform: scale(1.05);
+}
+
+/* --- ANIMATION YA PIGO LA MOYO (Pulse) --- */
+@keyframes pulse-glow {
+    0% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 204, 0, 0.2); }
+    50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(255, 204, 0, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 0 5px rgba(255, 204, 0, 0.2); }
+}
+
+/* Inafanya kadi ya kwanza au inayopendekezwa icheze yenyewe */
+.movie-card.featured {
+    animation: pulse-glow 2s infinite;
+    border-color: gold;
+}
+
+/* Inafanya picha yoyote ing'ae ikiguswa tu */
+.movie-card:hover {
+    animation: pulse-glow 1.5s infinite;
+    cursor: pointer;
+}
 
