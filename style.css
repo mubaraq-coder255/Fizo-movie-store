@@ -305,4 +305,33 @@ button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; 
     box-shadow: 0 10px 20px rgba(255, 204, 0, 0.4);
     border-color: gold;
 }
+/* --- NOTIFICATION TOAST (Kijumbe cha juu) --- */
+#notification {
+    position: fixed;
+    top: -100px; /* Inajificha kwanza juu */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #28a745; /* Rangi ya kijani */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    z-index: 10000;
+    transition: 0.5s ease; /* Inashuka taratibu */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+#notification.show { top: 20px; } /* Inashuka chini ikionyeshwa */
+
+/* --- FILAMU NYENGINE KALI (Muundo wa Kidonge) --- */
+.related-title {
+    background: #ff0000;
+    color: #fff;
+    padding: 10px 30px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50px;
+    display: table;
+    margin: 20px auto 15px auto;
+    text-transform: uppercase;
+}
 
