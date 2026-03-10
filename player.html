@@ -80,16 +80,19 @@
 const watchlistBtn = document.querySelector('.add-btn');
 
 watchlistBtn.addEventListener('click', function() {
-    // Badili rangi na maandishi
-    if (this.classList.contains('active')) {
-        this.style.backgroundColor = '#28a745'; // Rudi Kijani
+    // Vibrate simu kidogo (kwa simu zinazokubali)
+    if (navigator.vibrate) {
+        navigator.vibrate(50); 
+    }
+
+    if (this.style.backgroundColor === 'rgb(85, 85, 85)') {
+        this.style.backgroundColor = '#28a745';
         this.innerHTML = '+ Watchlist';
-        this.classList.remove('active');
+        showToast("Imeondolewa!", "#ffc107");
     } else {
-        this.style.backgroundColor = '#555'; // Geuka Kijivu
+        this.style.backgroundColor = '#555';
         this.innerHTML = '✓ Added';
-        this.classList.add('active');
-        alert("Imeongezwa kwenye Watchlist yako!");
+        showToast("Imeongezwa kwa Mafanikio! 😍");
     }
 });
 
