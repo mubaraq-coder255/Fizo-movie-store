@@ -31,6 +31,25 @@
 
     <main>
         <div id="movieGrid" class="movie-grid"></div>
+        <input type="text" id="searchInput" placeholder="Tafuta muvi..." onkeyup="searchMovies()">
+
+<div id="movieGrid" class="movie-grid"></div>
+
+<script>
+function searchMovies() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('movie-card');
+    
+    for (let i = 0; i < cards.length; i++) {
+        let title = cards[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+        if (title.includes(input)) {
+            cards[i].style.display = "";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+</script>
         
         <script>
             fetch('movies.json')
