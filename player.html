@@ -75,5 +75,44 @@
         window.location.href = "all-movies.html"; // Mteja anarudishwa kwenye orodha ili achague nyingine
     };
 </script>
+    <script>
+// --- UTENDAJI WA WATCHLIST ---
+const watchlistBtn = document.querySelector('.add-btn');
+
+watchlistBtn.addEventListener('click', function() {
+    // Badili rangi na maandishi
+    if (this.classList.contains('active')) {
+        this.style.backgroundColor = '#28a745'; // Rudi Kijani
+        this.innerHTML = '+ Watchlist';
+        this.classList.remove('active');
+    } else {
+        this.style.backgroundColor = '#555'; // Geuka Kijivu
+        this.innerHTML = '✓ Added';
+        this.classList.add('active');
+        alert("Imeongezwa kwenye Watchlist yako!");
+    }
+});
+
+// --- UTENDAJI WA SHARE ---
+const shareBtn = document.querySelector('.share-btn');
+
+shareBtn.addEventListener('click', async () => {
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'SISU 2 - Action Movie',
+                text: 'Angalia hii muvi kali imetafsiriwa hapa!',
+                url: window.location.href // Inachukua link ya sasa hivi
+            });
+        } catch (err) {
+            console.log('Share canceled');
+        }
+    } else {
+        // Kama browser haina share, tunanakili link
+        navigator.clipboard.writeText(window.location.href);
+        alert("Link imenakiliwa! Sasa unaweza kuituma WhatsApp.");
+    }
+});
+</script>
 </body>
 </html>
