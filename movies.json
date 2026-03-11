@@ -1,13 +1,26 @@
 [
   {
-    "id": 1,
-    "title": "SISU 2",
-    "category": "ACTIONS",
-    "status": "Imetafsiriwa",
-    "image": "images/sisu2.jpg",
-    "video_url": "https://www.youtube.com/embed/gIxxTFRrSDk",
-    "buy_link": "https://wa.me/255xxxxxxxxx",
-    "description": "Filamu ya kusisimua ya kijasusi inayohusu ukombozi wa taifa."
+    "title": "UNTAMED RIDER",
+    "image": "wakubwa.jpg",
+    "link": "player.html?v=untamed",
+    "category": "action",
+    "views": 988,
+    "likes": 120
+  },
+  {
+    "title": "SERIES BOMBA",
+    "image": "series.jpg",
+    "link": "player.html?v=series",
+    "category": "comedy",
+    "views": 450,
+    "likes": 85
+  },
+  {
+    "title": "PUNITIVE TRAIN",
+    "image": "mpya.jpg",
+    "link": "player.html?v=punitive",
+    "category": "crime",
+    "views": 320,
+    "likes": 95
   }
 ]
-
