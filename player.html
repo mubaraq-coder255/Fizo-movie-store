@@ -16,12 +16,10 @@
     <div class="player-container">
     <h1 class="movie-title">Inapakia...</h1>
     <iframe width="100%" height="315" src="" id="moviePlayer" frameborder="0" allowfullscreen></iframe>
-    
     <p class="movie-meta">
         <span class="movie-category"></span> | 
         <span class="movie-status"></span>
     </p>
-    
     <a href="#" class="buy-btn">NUNUA FILAMU HAPA</a>
     <p class="movie-desc"></p>
 </div>
@@ -29,23 +27,10 @@
     // Ndani ya ile script yako ya fetch, ongeza hii mstari:
     document.getElementById('moviePlayer').src = movie.video_url;
 </script>
-    
 <p class="movie-meta">
     <span class="movie-category"></span> | 
     <span class="movie-status"></span>
 </p>
-
-<script>
-    // ... (kodi ya awali ya fetch) ...
-    if(movie) {
-        document.querySelector('.movie-title').innerText = movie.title;
-        document.querySelector('.movie-category').innerText = movie.category;
-        document.querySelector('.movie-status').innerText = movie.status;
-        document.querySelector('.movie-desc').innerText = movie.description;
-        document.querySelector('.buy-btn').href = movie.buy_link;
-    }
-</script>
-
 <div class="action-buttons">
                 <button class="add-btn" onclick="addToWatchlist()">+ Watchlist</button>
                 <button class="share-btn" onclick="shareMovie()">Share</button>
@@ -59,12 +44,10 @@
     <div class="related-title">FILAMU NYENGINE KALI</div>
             <div class="movie-grid" id="relatedMovies">
     </div>
-
 <script>
     // 1. Inapata ID ya muvi kutoka kwenye link
     const urlParams = new URLSearchParams(window.location.search);
     const movieId = urlParams.get('id') || 1;
-
     // 2. Inasoma data kutoka kwenye movie.json
     fetch('movie.json')
         .then(res => res.json())
@@ -81,12 +64,10 @@
             }
         })
         .catch(err => console.log("Kuna tatizo la data:", err));
-</script>
-            
+</script> 
     <div class="movie-grid" id="relatedGrid">
         </div>
         </div>
-        
         <footer class="site-footer">
             <div class="footer-links">
                 <a href="#">About Us</a> | <a href="#">Terms</a> | <a href="#">Contact</a>
@@ -94,10 +75,8 @@
             <p>Copyright © 2026 Fizo Movies Store.</p>
         </footer>
     </div>
-
 <script>
     const videoPlayer = document.querySelector('video');
-
     videoPlayer.onended = function() {
         // Hapa tunaweka link ya video inayofuata (mfano wa automatic transition)
         // Kwa sasa tunamrudisha kwenye orodha ya muvi au tunaweza kufungua muvi inayofuata
@@ -108,13 +87,11 @@
     <script>
 // --- UTENDAJI WA WATCHLIST ---
 const watchlistBtn = document.querySelector('.add-btn');
-
 watchlistBtn.addEventListener('click', function() {
     // Vibrate simu kidogo (kwa simu zinazokubali)
     if (navigator.vibrate) {
         navigator.vibrate(50); 
     }
-
     if (this.style.backgroundColor === 'rgb(85, 85, 85)') {
         this.style.backgroundColor = '#28a745';
         this.innerHTML = '+ Watchlist';
@@ -128,7 +105,6 @@ watchlistBtn.addEventListener('click', function() {
 
 // --- UTENDAJI WA SHARE ---
 const shareBtn = document.querySelector('.share-btn');
-
 shareBtn.addEventListener('click', async () => {
     if (navigator.share) {
         try {
