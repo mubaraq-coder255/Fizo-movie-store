@@ -6,9 +6,9 @@
     <title>Fizo Movie Store</title>
 </head>
 <body>
-
     <div class="player-container">
         <h1 class="movie-title">Inapakia...</h1>
+        
         <iframe width="100%" height="315" src="" id="moviePlayer" frameborder="0" allowfullscreen></iframe>
         
         <p class="movie-meta">
@@ -20,19 +20,13 @@
         <p class="movie-desc"></p>
     </div>
 
-    <div class="related-section">
-        <h3>FILAMU NYINGINE KALI</h3>
-        <div class="movie-grid" id="relatedMovies"></div>
-    </div>
-
     <script>
         const urlParams = new URLSearchParams(window.location.search);
         const movieId = urlParams.get('id') || 1;
-        // Fetch data
+
         fetch('movie.json')
             .then(res => res.json())
             .then(data => {
-                // Jaza muvi ya sasa
                 const movie = data.find(m => m.id == movieId);
                 if(movie) {
                     document.querySelector('.movie-title').innerText = movie.title;
@@ -42,16 +36,6 @@
                     document.querySelector('.movie-desc').innerText = movie.description;
                     document.querySelector('.buy-btn').href = movie.buy_link;
                 }
-                // Jaza muvi nyingine (Related)
-                const grid = document.getElementById('relatedMovies');
-                data.forEach(m => {
-                    grid.innerHTML += `
-                        <a href="player.html?id=${m.id}" class="movie-card">
-                            <img src="${m.image}" alt="${m.title}">
-                            <p>${m.title}</p>
-                        </a>
-                    `;
-                });
             });
     </script>
 </body>
