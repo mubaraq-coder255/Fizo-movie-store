@@ -1,26 +1,29 @@
 [
   {
+    "id": 1,
+    "title": "SISU 2",
+    "category": "Action Movie",
+    "status": "Imetafsiriwa",
+    "image": "images/sisu2.jpg",
+    "buy_link": "https://wa.me/255749705400",
+    "description": "Filamu ya kusisimua ya kijasusi inayohusu ukombozi wa taifa..."
+  },
+  {
+    "id": 2,
     "title": "UNTAMED RIDER",
-    "image": "wakubwa.jpg",
-    "link": "player.html?v=untamed",
-    "category": "action",
-    "views": 988,
-    "likes": 120
+    "category": "Adventure",
+    "status": "Imetafsiriwa",
+    "image": "images/rider.jpg",
+    "buy_link": "https://wa.me/255749705400",
+    "description": "Hadithi ya kusisimua ya mpanda farasi shujaa anayepambana na hatari."
   },
   {
+    "id": 3,
     "title": "SERIES BOMBA",
-    "image": "series.jpg",
-    "link": "player.html?v=series",
-    "category": "comedy",
-    "views": 450,
-    "likes": 85
-  },
-  {
-    "title": "PUNITIVE TRAIN",
-    "image": "mpya.jpg",
-    "link": "player.html?v=punitive",
-    "category": "crime",
-    "views": 320,
-    "likes": 95
+    "category": "Series",
+    "status": "Imetafsiriwa",
+    "image": "images/series.jpg",
+    "buy_link": "https://wa.me/255749705400",
+    "description": "Mfululizo wa vipindi vya kusisimua vinavyokupa burudani isiyo na mwisho."
   }
 ]
