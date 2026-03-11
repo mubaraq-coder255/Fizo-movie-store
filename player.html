@@ -2,41 +2,121 @@
 <html lang="sw">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizo Player | Sisu 2</title>
     <link rel="stylesheet" href="style.css">
-    <title>Fizo Movie Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+    <nav style="padding: 10px;">
+    <a href="index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Rudi Nyumbani
+    </a>
+    </nav>
 <body>
     <div class="player-container">
-        <h1 class="movie-title">Inapakia...</h1>
-        
-        <iframe width="100%" height="315" src="" id="moviePlayer" frameborder="0" allowfullscreen></iframe>
-        
-        <p class="movie-meta">
-            <span class="movie-category"></span> | 
-            <span class="movie-status"></span>
-        </p>
-        
-        <a href="#" class="buy-btn">NUNUA FILAMU HAPA</a>
-        <p class="movie-desc"></p>
+        <video controls poster="wakubwa.jpg" class="main-video">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        </video>
+        <div class="movie-info">
+            <h1>Sisu 2</h1>
+            <div class="stats-line">|       Action Movie | Imetafsiriwa |</div>
+            <a href="https://wa.me/255749705400?text=Habari%20Fizo,%20nahitaji%20kununua%20muvi%20ya:%20SISU%202" class="buy-btn">
+    <i class="fab fa-whatsapp"></i> NUNUA FILAMU HAPA 
+</a>
+<div class="action-buttons">
+                <button class="add-btn" onclick="addToWatchlist()">+ Watchlist</button>
+                <button class="share-btn" onclick="shareMovie()">Share</button>
+            </div>
+        </div>
+        <div class="desc-box">
+            <h2 class="desc-title">DESCRIPTION</h2>
+            <p>Filamu ya kusisimua ya kijasusi inayohusu ukombozi wa taifa...</p>
+        </div>
+        <div class="related-section">
+    <div class="related-title">FILAMU NYENGINE KALI</div>
+            <div class="movie-grid" id="relatedMovies">
     </div>
 
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const movieId = urlParams.get('id') || 1;
+<script>
+    fetch('movies.json')
+    .then(response => response.json())
+    .then(data => {
+        const grid = document.getElementById('relatedMovies');
+        // Inachukua muvi zote zilizopo kwenye movies.json na kuziweka hapa
+        grid.innerHTML = data.map(m => `
+            <a href="${m.link}" class="movie-card">
+                <img src="${m.image}" loading="lazy">
+                <p>${m.title}</p>
+            </a>
+        `).join('');
+    })
+    .catch(error => console.error('Hitilafu kwenye data:', error));
+</script>
+            
+    <div class="movie-grid" id="relatedGrid">
+        </div>
+        </div>
+        
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="#">About Us</a> | <a href="#">Terms</a> | <a href="#">Contact</a>
+            </div>
+            <p>Copyright © 2026 Fizo Movies Store.</p>
+        </footer>
+    </div>
 
-        fetch('movie.json')
-            .then(res => res.json())
-            .then(data => {
-                const movie = data.find(m => m.id == movieId);
-                if(movie) {
-                    document.querySelector('.movie-title').innerText = movie.title;
-                    document.getElementById('moviePlayer').src = movie.video_url;
-                    document.querySelector('.movie-category').innerText = movie.category;
-                    document.querySelector('.movie-status').innerText = movie.status;
-                    document.querySelector('.movie-desc').innerText = movie.description;
-                    document.querySelector('.buy-btn').href = movie.buy_link;
-                }
+<script>
+    const videoPlayer = document.querySelector('video');
+
+    videoPlayer.onended = function() {
+        // Hapa tunaweka link ya video inayofuata (mfano wa automatic transition)
+        // Kwa sasa tunamrudisha kwenye orodha ya muvi au tunaweza kufungua muvi inayofuata
+        alert("Video imeisha! Inapakia inayofuata...");
+        window.location.href = "all-movies.html"; // Mteja anarudishwa kwenye orodha ili achague nyingine
+    };
+</script>
+    <script>
+// --- UTENDAJI WA WATCHLIST ---
+const watchlistBtn = document.querySelector('.add-btn');
+
+watchlistBtn.addEventListener('click', function() {
+    // Vibrate simu kidogo (kwa simu zinazokubali)
+    if (navigator.vibrate) {
+        navigator.vibrate(50); 
+    }
+
+    if (this.style.backgroundColor === 'rgb(85, 85, 85)') {
+        this.style.backgroundColor = '#28a745';
+        this.innerHTML = '+ Watchlist';
+        showToast("Imeondolewa!", "#ffc107");
+    } else {
+        this.style.backgroundColor = '#555';
+        this.innerHTML = '✓ Added';
+        showToast("Imeongezwa kwa Mafanikio! 😍");
+    }
+});
+
+// --- UTENDAJI WA SHARE ---
+const shareBtn = document.querySelector('.share-btn');
+
+shareBtn.addEventListener('click', async () => {
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: 'SISU 2 - Action Movie',
+                text: 'Angalia hii muvi kali imetafsiriwa hapa!',
+                url: window.location.href // Inachukua link ya sasa hivi
             });
-    </script>
+        } catch (err) {
+            console.log('Share canceled');
+        }
+    } else {
+        // Kama browser haina share, tunanakili link
+        navigator.clipboard.writeText(window.location.href);
+        alert("Link imenakiliwa! Sasa unaweza kuituma WhatsApp.");
+    }
+});
+</script>
+    <div id="notification">Imeongezwa kwenye Watchlist!</div>
 </body>
 </html>
