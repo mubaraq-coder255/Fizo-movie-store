@@ -61,19 +61,26 @@
     </div>
 
 <script>
-    fetch('movies.json')
-    .then(response => response.json())
-    .then(data => {
-        const grid = document.getElementById('relatedMovies');
-        // Inachukua muvi zote zilizopo kwenye movies.json na kuziweka hapa
-        grid.innerHTML = data.map(m => `
-            <a href="${m.link}" class="movie-card">
-                <img src="${m.image}" loading="lazy">
-                <p>${m.title}</p>
-            </a>
-        `).join('');
-    })
-    .catch(error => console.error('Hitilafu kwenye data:', error));
+    // 1. Inapata ID ya muvi kutoka kwenye link
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieId = urlParams.get('id') || 1;
+
+    // 2. Inasoma data kutoka kwenye movie.json
+    fetch('movie.json')
+        .then(res => res.json())
+        .then(data => {
+            const movie = data.find(m => m.id == movieId);
+            if(movie) {
+                // 3. Inajaza taarifa kwenye HTML
+                document.querySelector('.movie-title').innerText = movie.title;
+                document.getElementById('moviePlayer').src = movie.video_url;
+                document.querySelector('.movie-category').innerText = movie.category;
+                document.querySelector('.movie-status').innerText = movie.status;
+                document.querySelector('.movie-desc').innerText = movie.description;
+                document.querySelector('.buy-btn').href = movie.buy_link;
+            }
+        })
+        .catch(err => console.log("Kuna tatizo la data:", err));
 </script>
             
     <div class="movie-grid" id="relatedGrid">
