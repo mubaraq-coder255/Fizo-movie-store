@@ -13,6 +13,23 @@
     </a>
     </nav>
 <body>
+    <h1 class="movie-title">Inapakia...</h1>
+<p class="movie-meta">
+    <span class="movie-category"></span> | 
+    <span class="movie-status"></span>
+</p>
+
+<script>
+    // ... (kodi ya awali ya fetch) ...
+    if(movie) {
+        document.querySelector('.movie-title').innerText = movie.title;
+        document.querySelector('.movie-category').innerText = movie.category;
+        document.querySelector('.movie-status').innerText = movie.status;
+        document.querySelector('.movie-desc').innerText = movie.description;
+        document.querySelector('.buy-btn').href = movie.buy_link;
+    }
+</script>
+    
     <div class="player-container">
         <video controls poster="wakubwa.jpg" class="main-video">
             <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
