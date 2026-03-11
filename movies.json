@@ -6,6 +6,7 @@
     "status": "Imetafsiriwa",
     "image": "images/sisu2.jpg",
     "buy_link": "https://wa.me/255749705400",
+    "video_url": "https://www.youtube.com/embed/gIxxTFRrSDk",
     "description": "Filamu ya kusisimua ya kijasusi inayohusu ukombozi wa taifa..."
   },
   {
@@ -15,6 +16,7 @@
     "status": "Imetafsiriwa",
     "image": "images/rider.jpg",
     "buy_link": "https://wa.me/255749705400",
+    "video_url": "https://www.youtube.com/embed/gIxxTFRrSDk",
     "description": "Hadithi ya kusisimua ya mpanda farasi shujaa anayepambana na hatari."
   },
   {
@@ -24,6 +26,7 @@
     "status": "Imetafsiriwa",
     "image": "images/series.jpg",
     "buy_link": "https://wa.me/255749705400",
+    "video_url": "https://www.youtube.com/embed/gIxxTFRrSDk",
     "description": "Mfululizo wa vipindi vya kusisimua vinavyokupa burudani isiyo na mwisho."
   }
 ]
