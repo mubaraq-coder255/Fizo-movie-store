@@ -13,7 +13,23 @@
     </a>
     </nav>
 <body>
+    <div class="player-container">
     <h1 class="movie-title">Inapakia...</h1>
+    <iframe width="100%" height="315" src="" id="moviePlayer" frameborder="0" allowfullscreen></iframe>
+    
+    <p class="movie-meta">
+        <span class="movie-category"></span> | 
+        <span class="movie-status"></span>
+    </p>
+    
+    <a href="#" class="buy-btn">NUNUA FILAMU HAPA</a>
+    <p class="movie-desc"></p>
+</div>
+<script>
+    // Ndani ya ile script yako ya fetch, ongeza hii mstari:
+    document.getElementById('moviePlayer').src = movie.video_url;
+</script>
+    
 <p class="movie-meta">
     <span class="movie-category"></span> | 
     <span class="movie-status"></span>
@@ -29,17 +45,7 @@
         document.querySelector('.buy-btn').href = movie.buy_link;
     }
 </script>
-    
-    <div class="player-container">
-        <video controls poster="wakubwa.jpg" class="main-video">
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        </video>
-        <div class="movie-info">
-            <h1>Sisu 2</h1>
-            <div class="stats-line">|       Action Movie | Imetafsiriwa |</div>
-            <a href="https://wa.me/255749705400?text=Habari%20Fizo,%20nahitaji%20kununua%20muvi%20ya:%20SISU%202" class="buy-btn">
-    <i class="fab fa-whatsapp"></i> NUNUA FILAMU HAPA 
-</a>
+
 <div class="action-buttons">
                 <button class="add-btn" onclick="addToWatchlist()">+ Watchlist</button>
                 <button class="share-btn" onclick="shareMovie()">Share</button>
